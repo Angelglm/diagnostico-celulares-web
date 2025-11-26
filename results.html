@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del diagnóstico</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="app">
+    <div class="app__gradient"></div>
+    <header class="app-header">
+        <h1>Diagnóstico de fallas en dispositivos móviles</h1>
+        <p>Inteligencia Artificial</p>
+    </header>
+
+    <main class="app-main">
+        <section class="diagnostic-card diagnostic-card--results">
+            <fieldset class="diagnostic-card__fieldset">
+                <legend>Resultados</legend>
+                <div class="diagnostic-card__header">
+                    <p class="diagnostic-card__intro">
+                        Resumen del diagnóstico generado con tus respuestas <span class="intro__note">*</span>
+                    </p>
+                    <a class="diagnostic-card__submit" href="index.html">Capturar de nuevo</a>
+                </div>
+
+                <section class="results-section">
+                    <h2 class="results-section__title">Sugerencias del sistema</h2>
+                    <div class="results-diagnosis" id="result-diagnosis"></div>
+                </section>
+
+            </fieldset>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

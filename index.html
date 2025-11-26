@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de fallas en dispositivos móviles</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="app">
+    <div class="app__gradient"></div>
+    <header class="app-header">
+        <h1>Diagnóstico de fallas en dispositivos móviles</h1>
+        <p>Inteligencia Artificial</p>
+    </header>
+
+    <main class="app-main">
+        <form class="diagnostic-card" action="results.html" method="get">
+            <fieldset class="diagnostic-card__fieldset">
+                <legend>Captura de síntomas</legend>
+                <div class="diagnostic-card__header">
+                    <p class="diagnostic-card__intro">
+                        Selecciona algunos de los síntomas que presenta tu dispositivo<br>
+                        No es necesario contestar todas las preguntas <span class="intro__note">*</span>
+                    </p>
+                    <button class="diagnostic-card__submit" type="submit">Diagnosticar</button>
+                </div>
+
+                <ul class="symptom-list">
+                    <li class="symptom-item symptom-item--slider">
+                        <span class="symptom-item__label">¿Tienes poca duración de batería?</span>
+                        <div class="slider-control">
+                            <div class="slider-scale" aria-hidden="true">
+                                <span>NO</span>
+                                <span>75%</span>
+                                <span>50%</span>
+                                <span>25%</span>
+                                <span>0%</span>
+                            </div>
+                            <input class="slider-input" type="range" name="bateria" min="0" max="100" step="25" value="0" aria-label="Nivel actual de batería">
+                        </div>
+                    </li>
+                    <li class="symptom-item symptom-item--slider">
+                        <span class="symptom-item__label">¿Cuál es la velocidad de carga?</span>
+                        <div class="slider-control">
+                            <div class="slider-scale" aria-hidden="true">
+                                <span>Normal</span>
+                                <span>Lenta</span>
+                                <span>Muy lenta</span>
+                                <span>No carga</span>
+                            </div>
+                            <input class="slider-input" type="range" name="carga" min="0" max="3" step="1" value="0" aria-label="Velocidad de carga">
+                        </div>
+                    </li>
+                    <li class="symptom-item symptom-item--slider">
+                        <span class="symptom-item__label">¿Cómo se comporta el Bluetooth?</span>
+                        <div class="slider-control">
+                            <div class="slider-scale" aria-hidden="true">
+                                <span>Funciona</span>
+                                <span>No encuentra</span>
+                                <span>No enciende</span>
+                                <span>No conecta</span>
+                            </div>
+                            <input class="slider-input" type="range" name="bluetooth" min="0" max="3" step="1" value="0" aria-label="Estado del Bluetooth">
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿Te aparecen anuncios inesperados?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="anuncios" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="anuncios" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿Tienes consumo de datos inesperado?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="datos" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="datos" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿Tienes manchas o parpadeos en la pantalla?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="pantalla" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="pantalla" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿El touch no responde?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="touch" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="touch" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="symptom-item symptom-item--slider">
+                        <span class="symptom-item__label">¿Con qué frecuencia aparecen toques fantasma?</span>
+                        <div class="slider-control">
+                            <div class="slider-scale" aria-hidden="true">
+                                <span>No</span>
+                                <span>Pocas veces</span>
+                                <span>A veces</span>
+                                <span>Muy seguido</span>
+                            </div>
+                            <input class="slider-input" type="range" name="fantasma" min="0" max="3" step="1" value="0" aria-label="Frecuencia de toques fantasma">
+                        </div>
+                    </li>
+                    <li class="symptom-item symptom-item--slider">
+                        <span class="symptom-item__label">¿Qué tan grave es la distorsión en las bocinas?</span>
+                        <div class="slider-control">
+                            <div class="slider-scale" aria-hidden="true">
+                                <span>No</span>
+                                <span>Leve</span>
+                                <span>Moderado</span>
+                                <span>Alto</span>
+                            </div>
+                            <input class="slider-input" type="range" name="bocinas" min="0" max="3" step="1" value="0" aria-label="Gravedad de distorsión en bocinas">
+                        </div>
+                    </li>
+                    <li class="symptom-item symptom-item--slider">
+                        <span class="symptom-item__label">¿Tu micrófono presenta fallas?</span>
+                        <div class="slider-control">
+                            <div class="slider-scale" aria-hidden="true">
+                                <span>No</span>
+                                <span>Leve</span>
+                                <span>Moderado</span>
+                                <span>Alto</span>
+                            </div>
+                            <input class="slider-input" type="range" name="microfono" min="0" max="3" step="1" value="0" aria-label="Gravedad de la falla del micrófono">
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿El sensor de proximidad falla?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="proximidad" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="proximidad" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="symptom-item symptom-item--slider">
+                        <span class="symptom-item__label">¿Cómo responde la cámara?</span>
+                        <div class="slider-control">
+                            <div class="slider-scale" aria-hidden="true">
+                                <span>Abre</span>
+                                <span>Abre con manchas</span>
+                                <span>No abre</span>
+                            </div>
+                            <input class="slider-input" type="range" name="camara" min="0" max="2" step="1" value="0" aria-label="Estado de la cámara">
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿Tienes poco almacenamiento?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="almacenamiento" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="almacenamiento" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿Tienes reinicios inesperados?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="reinicios" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="reinicios" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="symptom-item">
+                        <span class="symptom-item__label">¿Tu señal o Wi-Fi se pierde sin motivo?</span>
+                        <div class="symptom-item__choices">
+                            <label class="choice">
+                                <input type="radio" name="senial" value="no" checked>
+                                <span>No</span>
+                            </label>
+                            <label class="choice">
+                                <input type="radio" name="senial" value="si">
+                                <span>Si</span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
