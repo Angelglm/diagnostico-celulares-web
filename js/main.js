@@ -9,9 +9,9 @@ const SYMPTOM_SCHEMA = [
         label: "Duración de batería",
         valueMap: {
             "0": { display: "Sin problema", weight: 0 },
-            "25": { display: "Se reduce cerca de 25%", weight: 0.25 },
+            "25": { display: "Se reduce cerca de 25%", weight: 0.2 },
             "50": { display: "Se reduce cerca de 50%", weight: 0.5 },
-            "75": { display: "Dura cerca del 25%", weight: 0.75 },
+            "75": { display: "Dura cerca del 25%", weight: 0.7 },
             "100": { display: "No retiene carga", weight: 1 }
         }
     },
@@ -21,7 +21,7 @@ const SYMPTOM_SCHEMA = [
         valueMap: {
             "0": { display: "Normal", weight: 0 },
             "1": { display: "Lenta", weight: 0.3 },
-            "2": { display: "Muy lenta", weight: 0.6 },
+            "2": { display: "Muy lenta", weight: 0.7 },
             "3": { display: "No carga", weight: 1 }
         }
     },
@@ -31,8 +31,8 @@ const SYMPTOM_SCHEMA = [
         valueMap: {
             "0": { display: "Funciona correctamente", weight: 0 },
             "1": { display: "No encuentra dispositivos", weight: 0.3 },
-            "2": { display: "No enciende", weight: 1 },
-            "3": { display: "No conecta", weight: 0.8 }
+            "2": { display: "No enciende", weight: 0.7 },
+            "3": { display: "No conecta", weight: 1 }
         }
     },
     {
@@ -40,7 +40,7 @@ const SYMPTOM_SCHEMA = [
         label: "Anuncios inesperados",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.8 }
+            si: { display: "Sí", weight: 1 }
         }
     },
     {
@@ -48,7 +48,7 @@ const SYMPTOM_SCHEMA = [
         label: "Consumo de datos inesperado",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.6 }
+            si: { display: "Sí", weight: 1 }
         }
     },
     {
@@ -56,7 +56,7 @@ const SYMPTOM_SCHEMA = [
         label: "Manchas o parpadeos en pantalla",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.5 }
+            si: { display: "Sí", weight: 1 }
         }
     },
     {
@@ -64,7 +64,7 @@ const SYMPTOM_SCHEMA = [
         label: "Touch no responde",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.9 }
+            si: { display: "Sí", weight: 1 }
         }
     },
     {
@@ -73,8 +73,8 @@ const SYMPTOM_SCHEMA = [
         valueMap: {
             "0": { display: "No aparecen", weight: 0 },
             "1": { display: "Pocas veces", weight: 0.3 },
-            "2": { display: "A veces", weight: 0.6 },
-            "3": { display: "Muy seguido", weight: 0.9 }
+            "2": { display: "A veces", weight: 0.7 },
+            "3": { display: "Muy seguido", weight: 1 }
         }
     },
     {
@@ -83,8 +83,8 @@ const SYMPTOM_SCHEMA = [
         valueMap: {
             "0": { display: "No hay distorsión", weight: 0 },
             "1": { display: "Leve", weight: 0.3 },
-            "2": { display: "Moderada", weight: 0.6 },
-            "3": { display: "Alta", weight: 0.9 }
+            "2": { display: "Moderada", weight: 0.7 },
+            "3": { display: "Alta", weight: 1 }
         }
     },
     {
@@ -92,7 +92,7 @@ const SYMPTOM_SCHEMA = [
         label: "Fallas en el micrófono",
         valueMap: {
             "0": { display: "No hay fallas", weight: 0 },
-            "1": { display: "Leve", weight: 0.4 },
+            "1": { display: "Leve", weight: 0.3 },
             "2": { display: "Moderada", weight: 0.7 },
             "3": { display: "Alta", weight: 1 }
         }
@@ -102,7 +102,7 @@ const SYMPTOM_SCHEMA = [
         label: "Falla en el sensor de proximidad",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.8 }
+            si: { display: "Sí", weight: 1 }
         }
     },
     {
@@ -119,7 +119,7 @@ const SYMPTOM_SCHEMA = [
         label: "Poco almacenamiento",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.2 }
+            si: { display: "Sí", weight: 1 }
         }
     },
     {
@@ -127,7 +127,7 @@ const SYMPTOM_SCHEMA = [
         label: "Reinicios inesperados",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.8 }
+            si: { display: "Sí", weight: 1 }
         }
     },
     {
@@ -135,7 +135,7 @@ const SYMPTOM_SCHEMA = [
         label: "Pérdida de señal o Wi-Fi",
         valueMap: {
             no: { display: "No", weight: 0 },
-            si: { display: "Sí", weight: 0.1 }
+            si: { display: "Sí", weight: 1 }
         }
     }
 ];
@@ -276,6 +276,7 @@ function hydrateResultsView() {
     }
 
     const { api } = stored;
+
     renderDiagnosis(diagnosisContainer, api?.data);
 }
 
